@@ -1,5 +1,5 @@
 <template>
-  <div v-show="loggedIn">
+  <div>
     <v-jumbotron>
       <v-container fill-height>
         <v-layout align-center row>
