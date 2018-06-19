@@ -21,7 +21,6 @@
 
 <script>
 import Vue from 'vue'
-import ApiService from '@/services/ApiService.js'
 
 Vue.component('AppHeader', () => import('@/components/header/Header.vue'))
 Vue.component('AppFooter', () => import('@/components/footer/Footer.vue'))
