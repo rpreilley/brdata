@@ -4,17 +4,17 @@
     <!-- NAV DRAWER COMPONENT-->
 
     <!-- TOOLBAR COMPONENT -->
-    <app-header v-show="loggedIn"></app-header>
+    <app-header></app-header>
 
     <!-- ROUTER VIEW COMPONENT -->
     <v-content>
       <v-container fluid>
-        <router-view :loggedIn="loggedIn"></router-view>
+        <router-view></router-view>
       </v-container>
     </v-content>
 
     <!-- FOOTER COMPONENT -->
-    <app-footer v-show="loggedIn"></app-footer>
+    <app-footer></app-footer>
 
   </v-app>
 </template>
@@ -34,27 +34,17 @@ export default {
   },
   data: () => {
     return {
-      message: {}
+
     }
   },
   methods: {
-    async testing () {
-      try {
-        let response = await ApiService.get('http://localhost:3000/login')
-        console.log('RESPONSE', response)
-        this.msg = response.data
-      } catch (e) {
-        console.log(e, 'Error Caught')
-      }
-    }
+
   },
   created () {
-    // this.testing()
+
   },
   computed: {
-    loggedIn () {
-      return (this.$store.state.user) ? this.$store.state.user.loggedIn : false
-    }
+
   }
 }
 </script>

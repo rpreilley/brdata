@@ -1,5 +1,5 @@
 export const state = {
-  logInForm: false,
-  signUpForm: false,
-  settingsForm: false
+  // logInForm: false,
+  // signUpForm: false,
+  // settingsForm: false
 }
