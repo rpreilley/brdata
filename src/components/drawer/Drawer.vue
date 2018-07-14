@@ -1,38 +1,22 @@
 <template>
-  <v-navigation-drawer
+<v-navigation-drawer
     v-model="drawer"
-    :mini-variant="mini"
     absolute
-    app
-    dark
     temporary
   >
     <v-list class="pa-1">
-      <v-list-tile v-if="mini" @click.stop="mini = !mini">
-        <v-list-tile-action>
-          <v-icon>chevron_right</v-icon>
-        </v-list-tile-action>
-      </v-list-tile>
-
-      <v-list-tile avatar tag="div">
-        <v-list-tile-avatar>
-          <img src="https://randomuser.me/api/portraits/men/85.jpg" >
-        </v-list-tile-avatar>
-
+      <v-list-tile>
         <v-list-tile-content>
           <v-list-tile-title>John Leider</v-list-tile-title>
         </v-list-tile-content>
-
-        <v-list-tile-action>
-          <v-btn icon @click.stop="mini = !mini">
-            <v-icon>chevron_left</v-icon>
-          </v-btn>
-        </v-list-tile-action>
+        <v-btn flat icon @click="changeMainDrawer">
+          <v-icon>close</v-icon>
+        </v-btn>
       </v-list-tile>
     </v-list>
 
     <v-list class="pt-0" dense>
-      <v-divider light></v-divider>
+      <v-divider></v-divider>
 
       <v-list-tile
         v-for="item in items"
@@ -51,13 +35,15 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
+
 export default {
   name: 'AppDrawer',
   data () {
     return {
       items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' }
+        { title: 'Home', icon: 'dashboard', path: '/' },
+        { title: 'About', icon: 'question_answer', path: '/about' }
       ],
       links: ['Home', 'Contacts', 'Settings'],
       mini: true,
@@ -65,12 +51,15 @@ export default {
     }
   },
   methods: {
-
+    ...mapMutations([ 'changeMainDrawer' ])
   },
   computed: {
     drawer: {
       get () {
         return this.$store.state.general.mainDrawer
+      },
+      set (val) {
+        return val
       }
     }
   }

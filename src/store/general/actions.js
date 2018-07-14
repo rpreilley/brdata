@@ -10,7 +10,6 @@ const actions = {
   // }
 
   changeMainDrawer (context) {
-    debugger
     context.commit('changeMainDrawer')
   }
 }

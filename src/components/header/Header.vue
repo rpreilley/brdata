@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar dense>
-      <v-toolbar-side-icon @click.stop="changeMainDrawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click="changeMainDrawer"></v-toolbar-side-icon>
       <v-toolbar-title>Title</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
