@@ -15,12 +15,14 @@
               <v-select
                 :items="items"
                 label="Crime Type"
+                v-model="selection"
               ></v-select>
               <v-btn large color="primary" class="mx-0" @click.stop="$router.go(-1)">Back</v-btn>
               <v-btn
                 class="mx-0"
                 color="primary"
                 large
+                @click="submit"
               >
                 Submit
               </v-btn>
@@ -40,12 +42,16 @@ export default {
   name: 'Home',
   data () {
     return {
-      items: ['Foo', 'Bar', 'Fizz', 'Buzz']
+      items: ['Battery', 'Criminal Damage To Property', 'Firearm', 'Vehicle Burglary', 'Sexual Assault', 'Other'],
+      selection: ''
     }
   },
   methods: methods,
   computed: computed,
   created () {
+
+  },
+  mounted () {
 
   }
 }
