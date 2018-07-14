@@ -1,5 +1,5 @@
 <template>
-<v-navigation-drawer
+  <v-navigation-drawer
     v-model="drawer"
     absolute
     temporary
@@ -7,7 +7,7 @@
     <v-list class="pa-1">
       <v-list-tile>
         <v-list-tile-content>
-          <v-list-tile-title>John Leider</v-list-tile-title>
+          <v-list-tile-title>Bob Reilley</v-list-tile-title>
         </v-list-tile-content>
         <v-btn flat icon @click="changeMainDrawer">
           <v-icon>close</v-icon>
