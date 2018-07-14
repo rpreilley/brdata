@@ -53,7 +53,7 @@
 <script>
 
 export default {
-  name: 'Drawer',
+  name: 'AppDrawer',
   data () {
     return {
       drawer: false,
