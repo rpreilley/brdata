@@ -9,10 +9,9 @@ const actions = {
   //   })
   // }
 
-  changeMainDrawer ({commit, state}, data) {
-    commit('changeMainDrawer', {
-      mainDrawer: data.mainDrawer
-    })
+  changeMainDrawer (context) {
+    debugger
+    context.commit('changeMainDrawer')
   }
 }
 

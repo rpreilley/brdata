@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar dense>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon @click.stop="changeMainDrawer"></v-toolbar-side-icon>
       <v-toolbar-title>Title</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
+
 export default {
   name: 'Header',
   data () {
@@ -31,10 +33,10 @@ export default {
     }
   },
   methods: {
-
+    ...mapMutations([ 'changeMainDrawer' ])
   },
   computed: {
-
+    ...mapState([ 'mainDrawer' ])
   }
 }
 </script>

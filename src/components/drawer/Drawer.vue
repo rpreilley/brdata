@@ -51,12 +51,10 @@
 </template>
 
 <script>
-
 export default {
   name: 'AppDrawer',
   data () {
     return {
-      drawer: false,
       items: [
         { title: 'Home', icon: 'dashboard' },
         { title: 'About', icon: 'question_answer' }
@@ -70,7 +68,11 @@ export default {
 
   },
   computed: {
-
+    drawer: {
+      get () {
+        return this.$store.state.general.mainDrawer
+      }
+    }
   }
 }
 </script>

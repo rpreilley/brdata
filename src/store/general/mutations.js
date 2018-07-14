@@ -8,7 +8,7 @@ const mutations = {
 
   changeMainDrawer (data) {
     // Mutate state of general store
-    data.mainDrawer = true
+    data.mainDrawer = !data.mainDrawer
   }
 }
 
