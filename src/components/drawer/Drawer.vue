@@ -7,11 +7,8 @@
     <v-list class="pa-1">
       <v-list-tile>
         <v-list-tile-content>
-          <v-list-tile-title>Bob Reilley</v-list-tile-title>
+          <v-list-tile-title>Main Menu</v-list-tile-title>
         </v-list-tile-content>
-        <v-btn flat icon @click="changeMainDrawer">
-          <v-icon>close</v-icon>
-        </v-btn>
       </v-list-tile>
     </v-list>
 
@@ -21,6 +18,7 @@
       <v-list-tile
         v-for="item in items"
         :key="item.title"
+        @click=""
       >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
@@ -42,8 +40,9 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Home', icon: 'dashboard', path: '/' },
-        { title: 'About', icon: 'question_answer', path: '/about' }
+        { title: 'Home', icon: 'home', path: '/' },
+        { title: 'Dashboard', icon: 'dashboard', path: '/dashboard' },
+        { title: 'Crime', icon: 'location_on', path: '/crime' }
       ],
       links: ['Home', 'Contacts', 'Settings'],
       mini: true,
@@ -51,7 +50,10 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([ 'changeMainDrawer' ])
+    ...mapMutations([ 'changeMainDrawer' ]),
+    menuSubmit (item) {
+      this.$router.push(item.path)
+    }
   },
   computed: {
     drawer: {

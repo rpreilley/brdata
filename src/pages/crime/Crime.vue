@@ -16,6 +16,7 @@
                 :items="items"
                 label="Crime Type"
               ></v-select>
+              <v-btn large color="primary" class="mx-0" @click.stop="$router.go(-1)">Back</v-btn>
               <v-btn
                 class="mx-0"
                 color="primary"
