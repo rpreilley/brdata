@@ -8,6 +8,12 @@ const actions = {
   //     settingsForm: data.settingsForm
   //   })
   // }
+
+  changeMainDrawer ({commit, state}, data) {
+    commit('changeMainDrawer', {
+      mainDrawer: data.mainDrawer
+    })
+  }
 }
 
 export default actions
