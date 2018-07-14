@@ -13,7 +13,7 @@
 
               <div class="title mb-3">Please select a crime type.</div>
               <v-select
-                :items="items"
+                :items="selections"
                 label="Crime Type"
                 v-model="selection"
               ></v-select>
@@ -30,6 +30,22 @@
           </v-layout>
         </v-container>
       </v-jumbotron>
+      <v-data-table
+        :headers="headers"
+        :items="items"
+        hide-actions
+        class="elevation-1"
+        v-show="showTable"
+      >
+        <template slot="items" slot-scope="props">
+          <td>{{ props.item.name }}</td>
+          <td class="text-xs-right">{{ props.item.calories }}</td>
+          <td class="text-xs-right">{{ props.item.fat }}</td>
+          <td class="text-xs-right">{{ props.item.carbs }}</td>
+          <td class="text-xs-right">{{ props.item.protein }}</td>
+          <td class="text-xs-right">{{ props.item.iron }}</td>
+        </template>
+      </v-data-table>
     </v-flex>
   </v-layout>
 </template>
@@ -42,8 +58,11 @@ export default {
   name: 'Home',
   data () {
     return {
-      items: ['Battery', 'Criminal Damage To Property', 'Firearm', 'Vehicle Burglary', 'Sexual Assault', 'Other'],
-      selection: ''
+      selections: ['Battery', 'Criminal Damage To Property', 'Firearm', 'Vehicle Burglary', 'Sexual Assault', 'Other'],
+      selection: '',
+      headers: [],
+      items: [],
+      showTable: false
     }
   },
   methods: methods,
