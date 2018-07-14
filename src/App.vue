@@ -22,17 +22,17 @@
 
 <script>
 import Vue from 'vue'
-import AppDrawer from '@/components/drawer/Drawer.vue'
 
 Vue.component('app-header', () => import('@/components/header/Header.vue'))
 Vue.component('app-footer', () => import('@/components/footer/Footer.vue'))
+Vue.component('app-drawer', () => import('@/components/drawer/Drawer.vue'))
 
 export default {
   name: 'App',
   components: {
     AppHeader: () => import('@/components/header/Header.vue'),
     AppFooter: () => import('@/components/footer/Footer.vue'),
-    AppDrawer
+    AppDrawer: () => import('@/components/drawer/Drawer.vue')
   },
   data: () => {
     return {

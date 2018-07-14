@@ -30,7 +30,7 @@ const app = new Vue({
   store,
   router,
   ...App,
-  components: { App: () => import('@/components/home/Home.vue') }
+  components: { App: () => import('@/App.vue') }
 })
 
 export { app, router, store }

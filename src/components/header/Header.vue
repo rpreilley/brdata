@@ -19,8 +19,6 @@
         </v-menu>
       </v-toolbar-items>
     </v-toolbar>
-
-    <drawer></drawer>
   </div>
 </template>
 
