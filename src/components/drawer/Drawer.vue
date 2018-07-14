@@ -3,6 +3,7 @@
     v-model="drawer"
     absolute
     temporary
+    clipped
   >
     <v-list class="pa-1">
       <v-list-tile>
@@ -18,7 +19,7 @@
       <v-list-tile
         v-for="item in items"
         :key="item.title"
-        @click=""
+        @click="menuSubmit(item)"
       >
         <v-list-tile-action>
           <v-icon>{{ item.icon }}</v-icon>
