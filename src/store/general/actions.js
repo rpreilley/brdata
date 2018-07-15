@@ -11,9 +11,6 @@ const actions = {
 
   changeMainDrawer (context) {
     context.commit('changeMainDrawer')
-  },
-  changeMusicSetting (context) {
-    context.commit('changeMusicSetting')
   }
 }
 

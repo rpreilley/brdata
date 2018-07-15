@@ -4,7 +4,6 @@
       <v-toolbar-title>Baton Rouge Local Data</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn slot="activator" flat v-show="music"><v-icon>pause</v-icon></v-btn>
         <v-menu offset-y open-on-hover>
           <v-btn slot="activator" flat><v-icon class="icon-with-text">pages</v-icon>Pages</v-btn>
           <v-list>
@@ -61,7 +60,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([ 'music' ])
+    ...mapGetters([ 'appTheme' ])
   }
 }
 </script>

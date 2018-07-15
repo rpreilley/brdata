@@ -17,16 +17,9 @@
           <v-list>
             <v-list-tile>
               <v-list-tile-action>
-                <v-switch v-model="appTheme"></v-switch>
+                <v-switch></v-switch>
               </v-list-tile-action>
-              <v-list-tile-title>Light App Theme</v-list-tile-title>
-            </v-list-tile>
-
-            <v-list-tile>
-              <v-list-tile-action>
-                <v-switch v-model="music" @change="changeMusicSetting"></v-switch>
-              </v-list-tile-action>
-              <v-list-tile-title>Enable Music</v-list-tile-title>
+              <v-list-tile-title>Something</v-list-tile-title>
             </v-list-tile>
           </v-list>
 
@@ -41,7 +34,7 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Settings',
@@ -52,7 +45,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations([ 'changeMusicSetting' ]),
+    ...mapMutations([ 'changeAppTheme' ])
   },
   computed: {
 

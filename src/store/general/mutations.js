@@ -9,10 +9,6 @@ const mutations = {
   changeMainDrawer (data) {
     // Mutate state of general store
     data.mainDrawer = !data.mainDrawer
-  },
-  changeMusicSetting (data) {
-    // Mutate state of general store
-    data.music = !data.music
   }
 }
 
