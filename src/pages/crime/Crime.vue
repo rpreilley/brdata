@@ -2,7 +2,7 @@
   <div>
     <v-jumbotron>
       <v-container fill-height>
-        <v-layout align-center>
+        <v-layout>
           <v-flex>
             <h3 class="display-3">Baton Rouge Crime Map</h3>
 
