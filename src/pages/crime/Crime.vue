@@ -14,6 +14,8 @@
             <v-select
               :items="selections"
               label="Crime Type"
+              item-text="title"
+              item-value="value"
               v-model="selection"
             ></v-select>
             <v-btn large color="primary" class="mx-0" @click.stop="$router.go(-1)">Back</v-btn>
@@ -113,7 +115,23 @@ export default {
       pagination: {
         sortBy: ['offense_date']
       },
-      selections: ['Assault', 'Battery', 'Criminal Damage To Property', 'Firearm', 'Homicide', 'Individial Robbery', 'Narcotics', 'Non-Residential Burglary', 'Nuisance', 'Residential Burglary', 'Sexual Assault', 'Theft', 'Vehicle Burglary', 'Vice', 'Other'],
+      selections: [
+        {title: 'Assault', value: 'ASSAULT'},
+        {title: 'Battery', value: 'BATTERY'},
+        {title: 'Criminal Damage To Property', value: 'CRIMINAL DAMAGE TO PROPERTY'},
+        {title: 'Firearm', value: 'FIREARM'},
+        {title: 'Homicide', value: 'HOMICIDE'},
+        {title: 'Individial Robbery', value: 'INDIVIDUAL ROBBERY'},
+        {title: 'Narcotics', value: 'NARCOTICS'},
+        {title: 'Non-Residential Burglary', value: 'NON-RESIDENTIAL BURGLARY'},
+        {title: 'Nuisance', value: 'NUISANCE'},
+        {title: 'Residential Burglary', value: 'RESIDENTIAL BURGLARY'},
+        {title: 'Sexual Assault', value: 'SEXUAL ASSAULT'},
+        {title: 'Theft', value: 'THEFT'},
+        {title: 'Vehicle Burglary', value: 'VEHICLE BURGLARY'},
+        {title: 'Vice', value: 'VICE'},
+        {title: 'Other', value: 'OTHER'}
+      ],
       selection: '',
       selected: [],
       headers: [

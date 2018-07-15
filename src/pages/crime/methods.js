@@ -5,8 +5,8 @@ const methods = {
     this.items = []
     this.showTable = false
     this.loading = true
-    let selection = this.selection.replace(/\s/g, '_').toUpperCase()
-    let url = `https://data.brla.gov/resource/5rji-ddnu.json?crime=${[selection]}`
+    let selection = this.selection
+    let url = `https://data.brla.gov/resource/5rji-ddnu.json?crime=${selection}`
     let response = await ApiService.get(url)
 
     for (let i = 0; i < response.data.length; i++) {
