@@ -113,7 +113,7 @@ export default {
       pagination: {
         sortBy: ['offense_date']
       },
-      selections: ['Battery', 'Criminal Damage To Property', 'Firearm', 'Vehicle Burglary', 'Sexual Assault', 'Other'],
+      selections: ['Assault', 'Battery', 'Criminal Damage To Property', 'Firearm', 'Homicide', 'Individial Robbery', 'Narcotics', 'Non-Residential Burglary', 'Nuisance', 'Residential Burglary', 'Sexual Assault', 'Theft', 'Vehicle Burglary', 'Vice', 'Other'],
       selection: '',
       selected: [],
       headers: [
