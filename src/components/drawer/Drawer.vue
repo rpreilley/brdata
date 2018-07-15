@@ -45,7 +45,6 @@ export default {
         { title: 'Dashboard', icon: 'dashboard', path: '/dashboard' },
         { title: 'Crime', icon: 'location_on', path: '/crime' }
       ],
-      links: ['Home', 'Contacts', 'Settings'],
       mini: true,
       right: null
     }
