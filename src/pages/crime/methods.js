@@ -13,6 +13,14 @@ const methods = {
 
     this.loading = false
     this.showTable = true
+  },
+  changeSort (column) {
+    if (this.pagination.sortBy === column) {
+      this.pagination.descending = !this.pagination.descending
+    } else {
+      this.pagination.sortBy = column
+      this.pagination.descending = false
+    }
   }
 }
 
