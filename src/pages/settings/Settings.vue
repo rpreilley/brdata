@@ -24,7 +24,7 @@
 
             <v-list-tile>
               <v-list-tile-action>
-                <v-switch v-model="music"></v-switch>
+                <v-switch v-model="music" @change="changeMusicSetting"></v-switch>
               </v-list-tile-action>
               <v-list-tile-title>Enable Music</v-list-tile-title>
             </v-list-tile>
@@ -32,7 +32,6 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-
             <v-btn large color="primary" class="mx-0" @click.stop="$router.go(-1)">Back</v-btn>
           </v-card-actions>
         </v-card>
@@ -42,6 +41,8 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
+
 export default {
   name: 'Settings',
   data () {
@@ -51,6 +52,7 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([ 'changeMusicSetting' ]),
   },
   computed: {
 
