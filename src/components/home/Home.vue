@@ -14,8 +14,7 @@
 </template>
 
 <script>
-import methods from './methods.js'
-import computed from './computed.js'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'Home',
@@ -24,8 +23,12 @@ export default {
 
     }
   },
-  methods: methods,
-  computed: computed,
+  methods: {
+    ...mapMutations([ 'changeMainDrawer' ])
+  },
+  computed: {
+
+  },
   created () {
 
   }
