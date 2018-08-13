@@ -1,6 +1,33 @@
 <template>
   <div>
-    <v-toolbar dense>
+    <v-navigation-drawer :clipped="clipped" v-model="drawer" enable-resize-watcher app>
+      <v-list class="pa-1">
+        <v-list-tile>
+          <v-list-tile-content>
+            <v-list-tile-title>Main Menu</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+
+      <v-list class="pt-0" dense>
+        <v-divider></v-divider>
+        <v-list-tile
+          v-for="item in items"
+          :key="item.title"
+          @click="menuSubmit(item)"
+        >
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+      <v-toolbar fixed app :clipped-left="clipped">
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Baton Rouge Local Data</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -43,6 +70,7 @@ export default {
   name: 'Header',
   data () {
     return {
+      drawer: false,
       pages: [
         { title: 'Home', icon: 'home', path: '/' },
         { title: 'Crime', icon: 'location_on', path: '/crime' },
@@ -50,7 +78,15 @@ export default {
       ],
       menuItems: [
         { title: 'Settings', icon: 'settings', path: '/settings' }
-      ]
+      ],
+      items: [
+        { title: 'Home', icon: 'home', path: '/' },
+        { title: 'Dashboard', icon: 'dashboard', path: '/dashboard' },
+        { title: 'Crime', icon: 'location_on', path: '/crime' }
+      ],
+      mini: true,
+      clipped: false,
+      right: null
     }
   },
   methods: {

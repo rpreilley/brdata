@@ -2,7 +2,6 @@
   <v-footer class="pa-3">
     <div>{{ new Date().toDateString() }}</div>
     <v-spacer></v-spacer>
-    <div>&copy; {{ new Date().getFullYear() }}</div>
   </v-footer>
 </template>
 
