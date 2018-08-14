@@ -2,37 +2,35 @@
     <v-container fluid>
       <v-layout>
         <v-flex>
-          <v-jumbotron>
-            <h3 class="display-3">Baton Rouge Crime Map</h3>
+          <h3 class="display-3">Baton Rouge Crime Map</h3>
 
-            <span class="subheading">This map will show attempted and committed crime locations by crime type on a map of Baton Rouge, Louisiana.</span>
-            <v-divider class="my-3"></v-divider>
-            <v-layout>
-              <v-flex xs12>
-                <div class="title mb-3">Please select a crime type.</div>
-                <v-select
-                  :items="selections"
-                  label="Crime Type"
-                  item-text="title"
-                  item-value="value"
-                  v-model="selection"
-                ></v-select>
-                <v-btn large color="primary" class="mx-0" @click.stop="$router.go(-1)">Back</v-btn>
-                <v-btn
-                  class="mx-0"
-                  color="primary"
-                  large
-                  @click="submit"
-                >
-                  Submit
-                </v-btn>
-              </v-flex>
-              <v-flex xs12 sm6 v-show="0==1">
-                <div class="title mb-3">Map Coverage.</div>
+          <span class="subheading">This map will show attempted and committed crime locations by crime type on a map of Baton Rouge, Louisiana.</span>
+          <v-divider class="my-3"></v-divider>
+          <v-layout>
+            <v-flex xs12>
+              <div class="title mb-3">Please select a crime type.</div>
+              <v-select
+                :items="selections"
+                label="Crime Type"
+                item-text="title"
+                item-value="value"
+                v-model="selection"
+              ></v-select>
+              <v-btn large color="primary" class="mx-0" @click.stop="$router.go(-1)">Back</v-btn>
+              <v-btn
+                class="mx-0"
+                color="primary"
+                large
+                @click="submit"
+              >
+                Submit
+              </v-btn>
+            </v-flex>
+            <v-flex xs12 sm6 v-show="0==1">
+              <div class="title mb-3">Map Coverage.</div>
 
-              </v-flex>
-            </v-layout>
-          </v-jumbotron>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
 
