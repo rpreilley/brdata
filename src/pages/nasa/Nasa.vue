@@ -9,39 +9,37 @@
       </v-flex>
     </v-layout>
 
-    <v-layout row wrap>
-      <v-flex xs12 sm4 md4 v-show="this.today">
+    <v-layout row>
+      <v-flex xs12>
         <v-menu
           ref="menu"
-          :close-on-content-click="true"
+          :close-on-content-click="false"
           v-model="menu"
-          :nudge-right="10"
-          :return-value.sync="date"
+          :nudge-right="40"
           lazy
           transition="scale-transition"
           offset-y
+          max-width="290px"
           min-width="290px"
         >
           <v-text-field
             slot="activator"
-            v-model="date"
-            :label="this.today"
+            v-model="dateFormatted"
+            label="Date"
+            persistent-hint
             prepend-icon="event"
-            readonly
+            @blur="date = parseDate(dateFormatted)"
           ></v-text-field>
-          <v-date-picker v-model="date" no-title scrollable>
-            <v-spacer></v-spacer>
-            <v-btn flat color="primary" @click="menu = false">Cancel</v-btn>
-            <v-btn flat color="primary" @click="$refs.menu.save(date)">OK</v-btn>
-          </v-date-picker>
+          <v-date-picker v-model="date" no-title @input="menu = false"></v-date-picker>
         </v-menu>
       </v-flex>
-
-      <v-flex xs12 sm8 md8 v-show="pod">
+    </v-layout>
+    <v-layout row v-show="date">
+      <v-flex xs10 offset-xs1>
         <v-card>
           <v-card-media
             :src="this.image"
-            height="400px"
+            height="200px"
           ></v-card-media>
 
           <v-card-title primary-title>
@@ -54,7 +52,6 @@
 
           <v-card-actions>
             <v-btn color="primary">Share</v-btn>
-            <v-btn color="primary">Explore</v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -71,49 +68,59 @@ export default {
   data () {
     return {
       date: null,
+      dateFormatted: null,
       menu: false,
       today: null,
-      pod: false,
       title: '',
       image: '',
       description: ''
     }
   },
   computed: {
-    src: {
-      get: function () {
-        return this.image
-      },
-      set: function (newValue) {
-        debugger
-      }
+    computedDateFormatted () {
+      return this.formatDate(this.date)
+    }
+  },
+  watch: {
+    date (val) {
+      this.dateFormatted = this.formatDate(this.date)
+      this.dateSelection()
     }
   },
   methods: {
+    formatDate (date) {
+      if (!date) return null
+
+      const [year, month, day] = date.split('-')
+      return `${month}/${day}/${year}`
+    },
+    parseDate (date) {
+      if (!date) return null
+
+      const [month, day, year] = date.split('/')
+      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
+    },
     async dateSelection () {
-      let today = new Date()
-      this.today = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + ('0' + today.getDate()).slice(-2)
-
       let baseUrl = 'https://api.nasa.gov/planetary/apod?api_key=I5HBsa9k5l5rBvl0dG9MBE7Zi1VaTjrpzg03xFpm&date='
-
-      let fullUrl = `${baseUrl}${this.today}`
+      let fullUrl = `${baseUrl}${this.date}`
 
       try {
         let response = await ApiService.get(fullUrl)
         this.title = response.data.title
         this.image = response.data.url
         this.description = response.data.explanation
-        this.pod = true
       } catch (e) {
         this.errors.push(e)
       }
+      this.label = this.date
+      this.menu = false
     }
   },
   created () {
 
   },
   mounted () {
-    this.dateSelection()
+
   }
 }
 </script>
