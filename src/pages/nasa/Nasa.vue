@@ -62,6 +62,7 @@
 
 <script>
 import ApiService from '@/services/ApiService.js'
+import config from '@/constants/config.js'
 
 export default {
   name: 'Nasa',
@@ -73,7 +74,8 @@ export default {
       today: null,
       title: '',
       image: '',
-      description: ''
+      description: '',
+      key: config
     }
   },
   computed: {
@@ -101,7 +103,7 @@ export default {
       return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
     },
     async dateSelection () {
-      let baseUrl = 'https://api.nasa.gov/planetary/apod?api_key=I5HBsa9k5l5rBvl0dG9MBE7Zi1VaTjrpzg03xFpm&date='
+      let baseUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key.NASA_API_KEY}&date=`
       let fullUrl = `${baseUrl}${this.date}`
 
       try {
