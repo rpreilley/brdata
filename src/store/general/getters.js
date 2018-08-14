@@ -1,10 +1,7 @@
 const getters = {
-  drawerStatus: state => {
-    return state.drawerStatus
-  },
-  appTheme: state => {
-    return state.appTheme
-  }
+  // drawerStatus: state => {
+  //   return state.drawerStatus
+  // }
 }
 
 export default getters

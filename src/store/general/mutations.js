@@ -5,11 +5,6 @@ const mutations = {
   //   data.signUpForm = ''
   //   data.settingsForm = ''
   // }
-
-  changeMainDrawer (data) {
-    // Mutate state of general store
-    data.mainDrawer = !data.mainDrawer
-  }
 }
 
 export default mutations

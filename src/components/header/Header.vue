@@ -28,10 +28,9 @@
     </v-navigation-drawer>
       <v-toolbar fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Baton Rouge Local Data</v-toolbar-title>
+      <v-toolbar-title>Bob Reilley Portfolio</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-
       </v-toolbar-items>
     </v-toolbar>
   </div>
