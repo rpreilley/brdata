@@ -26,7 +26,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-      <v-toolbar fixed app :clipped-left="clipped">
+      <v-toolbar dense fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Bob Reilley Portfolio</v-toolbar-title>
       <v-spacer></v-spacer>
