@@ -28,7 +28,7 @@
     </v-navigation-drawer>
       <v-toolbar dense fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Bob Reilley Portfolio</v-toolbar-title>
+      <v-toolbar-title>Bob Reilley</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
       </v-toolbar-items>
@@ -45,7 +45,7 @@ export default {
     return {
       drawer: false,
       items: [
-        { title: 'About', icon: 'book', path: '/about' },
+        { title: 'Home', icon: 'book', path: '/' },
         { title: 'Crime Watch', icon: 'gavel', path: '/crime' },
         { title: 'NASA Pod', icon: 'star', path: '/nasa' },
         { title: 'Movie Posters', icon: 'movie', path: '/movies' },

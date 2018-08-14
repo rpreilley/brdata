@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home/Home.vue'
+import Home from '@/pages/home/Home.vue'
 import Crime from '@/pages/crime/Crime.vue'
 import Movies from '@/pages/movies/Movies.vue'
 import Nasa from '@/pages/nasa/Nasa.vue'
@@ -15,11 +15,6 @@ export default new Router({
       name: 'Home',
       component: Home
     },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: Home
-    // },
     {
       path: '/nasa',
       name: 'Nasa',
@@ -34,6 +29,11 @@ export default new Router({
       path: '/movies',
       name: 'Movies',
       component: Movies
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Home
     }
   ]
 })
