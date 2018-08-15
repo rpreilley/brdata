@@ -1,16 +1,11 @@
 <template>
   <v-container fluid>
-    <v-layout>
-      <v-flex xs12>
+    <v-layout row>
+      <v-flex xs10 offset-xs1>
         <h3 class="display-3">NASA POD API</h3>
         <span class="subheading">This page utilizes the NASA POD API. This API features an image of the day and a description, along with other information such as </span>
         <v-divider class="my-3"></v-divider>
         <div class="title mb-3">Please select a date.</div>
-      </v-flex>
-    </v-layout>
-
-    <v-layout row>
-      <v-flex xs12>
         <v-menu
           ref="menu"
           :close-on-content-click="false"
@@ -34,6 +29,7 @@
         </v-menu>
       </v-flex>
     </v-layout>
+
     <v-layout row v-show="date">
       <v-flex xs10 offset-xs1>
         <v-card>
@@ -103,11 +99,10 @@ export default {
       return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`
     },
     async dateSelection () {
-      let baseUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key.NASA_API_KEY}&date=`
-      let fullUrl = `${baseUrl}${this.date}`
+      let baseUrl = `https://api.nasa.gov/planetary/apod?api_key=${this.key.NASA_API_KEY}&date=${this.date}`
 
       try {
-        let response = await ApiService.get(fullUrl)
+        let response = await ApiService.get(baseUrl)
         this.title = response.data.title
         this.image = response.data.url
         this.description = response.data.explanation

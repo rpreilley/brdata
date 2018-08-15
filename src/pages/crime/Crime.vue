@@ -1,7 +1,7 @@
 <template>
     <v-container fluid>
       <v-layout>
-        <v-flex>
+        <v-flex xs10 offset-xs1>
           <h3 class="display-3">Baton Rouge Crime Map</h3>
 
           <span class="subheading">This map will show attempted and committed crime locations by crime type on a map of Baton Rouge, Louisiana.</span>
