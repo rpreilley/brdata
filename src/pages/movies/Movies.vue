@@ -14,31 +14,57 @@
       </v-flex>
     </v-layout>
 
-    <v-layout row v-for="title in this.results" :key="title.imdbID">
-      <v-flex xs4>
-        <v-card>
-          <v-card-media
-            :src="title.Poster"
-            height="200px"
-          >
-          </v-card-media>
+    <v-container>
+      <v-layout>
+        <v-flex xs10 offset-sm1>
+          <v-card>
+            <v-container
+              fluid
+              grid-list-md
+            >
+              <v-layout row wrap>
+                <v-flex
+                  v-for="title in this.results" :key="title.imdbID"
+                >
+                  <v-card>
+                    <v-card-media
+                      :src="title.Poster"
+                      height="200px"
+                    >
+                      <v-container
+                        fill-height
+                        fluid
+                        pa-2
+                      >
+                        <v-layout fill-height>
+                          <v-flex xs12 align-end flexbox>
+                            <span class="headline white--text" v-text="title.Title"></span>
+                          </v-flex>
+                        </v-layout>
+                      </v-container>
+                    </v-card-media>
 
-          <v-card-title primary-title>
-            <div>
-              <div class="headline">{{ title.Title }}</div>
-              <span class="grey--text">{{ title.Year }}</span>
-              <span class="grey--text">{{ title.Type }}</span>
-            </div>
-          </v-card-title>
+                    <v-card-actions>
+                      <v-spacer></v-spacer>
+                      <v-btn icon>
+                        <v-icon>favorite</v-icon>
+                      </v-btn>
+                      <v-btn icon>
+                        <v-icon>bookmark</v-icon>
+                      </v-btn>
+                      <v-btn icon>
+                        <v-icon>share</v-icon>
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-card>
+        </v-flex>
+      </v-layout>
+    </v-container>
 
-          <v-card-actions>
-            <v-btn flat>Share</v-btn>
-            <v-btn flat color="purple">Explore</v-btn>
-            <v-spacer></v-spacer>
-          </v-card-actions>
-        </v-card>
-      </v-flex>
-    </v-layout>
   </v-container>
 </template>
 
