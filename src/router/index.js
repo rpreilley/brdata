@@ -4,6 +4,8 @@ import Home from '@/pages/home/Home.vue'
 import Crime from '@/pages/crime/Crime.vue'
 import Movies from '@/pages/movies/Movies.vue'
 import Nasa from '@/pages/nasa/Nasa.vue'
+import HarryPotter from '@/pages/harrypotter/HarryPotter.vue'
+
 
 Vue.use(Router)
 
@@ -29,6 +31,11 @@ export default new Router({
       path: '/movies',
       name: 'Movies',
       component: Movies
+    },
+    {
+      path: '/harrypotter',
+      name: 'Harry Potter',
+      component: HarryPotter
     },
     {
       path: '/dashboard',

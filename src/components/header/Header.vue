@@ -49,6 +49,7 @@ export default {
         { title: 'Crime Watch', icon: 'gavel', path: '/crime' },
         { title: 'NASA Pod', icon: 'star', path: '/nasa' },
         { title: 'Movie Posters', icon: 'movie', path: '/movies' },
+        { title: 'Harry Potter', icon: 'show_chart', path: '/harrypotter' },
         { title: 'Dashboard', icon: 'dashboard', path: '/dashboard' }
       ],
       mini: true,
