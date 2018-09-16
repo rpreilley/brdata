@@ -47,7 +47,7 @@
     </v-layout>
 
     <v-layout>
-      <v-flex xs12>
+      <v-flex xs10 offset-xs1>
         <v-data-table
           v-show="showTable"
           v-model="selected"

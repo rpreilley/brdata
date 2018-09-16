@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout>
-      <v-flex xs10 offset-sm1>
+      <v-flex xs10 offset-xs1>
         <h3 class="display-3">OMDB API</h3>
         <span class="subheading">This page utilizes the OMDB API for movie titles. This API features an image of the day and a description, along with other information such as </span>
         <v-divider class="my-3"></v-divider>
@@ -14,9 +14,9 @@
       </v-flex>
     </v-layout>
 
-    <v-container>
+    <v-container fluid v-show="this.results.length > 0">
       <v-layout>
-        <v-flex xs10 offset-sm1>
+        <v-flex xs10 offset-xs1>
           <v-card>
             <v-container
               fluid

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-layout>
-      <v-flex xs10 offset-sm1>
+      <v-flex xs10 offset-xs1>
         <h3 class="display-3">Harry Potter API</h3>
         <span class="subheading">This page utilizes the Harry Potter API to tap into some Harry Potter information. This API features endpoints that return HP characters, a random house for the sorting hat, spells, and house details. I'm a massive Harry Potter geek, so it's going in here. </span>
         <v-divider class="my-3"></v-divider>
@@ -16,7 +16,7 @@
 
     <v-container>
       <v-layout>
-        <v-flex xs10 offset-sm1>
+        <v-flex xs10 offset-xs1>
           <v-card color="primary">
             <v-container
               fluid
