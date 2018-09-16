@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     async titleSelection () {
-      let baseUrl = `http://www.omdbapi.com/?apikey=${this.key.OMDB_API}&s=${this.selection}`
+      let baseUrl = `http://www.omdbapi.com/?apikey=${this.key.OMDB_API_KEY}&s=${this.selection}`
 
       try {
         let response = await ApiService.get(baseUrl)

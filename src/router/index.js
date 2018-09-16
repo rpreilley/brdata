@@ -6,7 +6,6 @@ import Movies from '@/pages/movies/Movies.vue'
 import Nasa from '@/pages/nasa/Nasa.vue'
 import HarryPotter from '@/pages/harrypotter/HarryPotter.vue'
 
-
 Vue.use(Router)
 
 export default new Router({
