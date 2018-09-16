@@ -27,17 +27,17 @@
                   v-for="character in this.results" :key="character._id">
                   <v-card>
                     <v-card-title primary-title>
-                      <div>
+                      <div class="caps">
                         <h3 class="headline mb-0">{{ character.name }}</h3>
-                        <h4 class="mb-0">House: {{ character.house }}</h4>
-                        <h4 class="mb-0">Blood Status: {{ character.bloodStatus }}</h4>
-                        <h4 class="mb-0">Death Eater: {{ character.deathEater | convertBool }}</h4>
-                        <h4 class="mb-0">Member of Dumbledores Army: {{ character.dumbledoresArmy | convertBool }}</h4>
-                        <h4 class="mb-0">Member of the Ministry of Magic: {{ character.ministryOfMagic | convertBool }}</h4>
-                        <h4 class="mb-0">Member of the Order of the Phoenix: {{ character.orderOfThePhoenix | convertBool }}</h4>
-                        <h4 class="mb-0">Role: {{ character.role }}</h4>
-                        <h4 class="mb-0">School: {{ character.school }}</h4>
-                        <h4 class="mb-0">Species: {{ character.species }}</h4>
+                        <h4 class="mb-0">House: {{ character.house ? character.house : 'N/A' }}</h4>
+                        <h4 class="mb-0">Blood Status: {{ character.bloodStatus ? character.bloodStatus : 'N/A' }}</h4>
+                        <h4 class="mb-0">Death Eater: {{ character.deathEater ? character.deathEater : 'N/A' | convertBool }}</h4>
+                        <h4 class="mb-0">Member of Dumbledores Army: {{ character.dumbledoresArmy ? character.dumbledoresArmy : 'N/A' | convertBool }}</h4>
+                        <h4 class="mb-0">Member of the Ministry of Magic: {{ character.ministryOfMagic ? character.ministryOfMagic : 'N/A' | convertBool }}</h4>
+                        <h4 class="mb-0">Member of the Order of the Phoenix: {{ character.orderOfThePhoenix ? character.orderOfThePhoenix : 'N/A' | convertBool }}</h4>
+                        <h4 class="mb-0">Role: {{ character.role ? character.role : 'N/A' }}</h4>
+                        <h4 class="mb-0">School: {{ character.school ? character.school : 'N/A' }}</h4>
+                        <h4 class="mb-0">Species: {{ character.species ? character.species : 'N/A' }}</h4>
                       </div>
                     </v-card-title>
                   </v-card>
@@ -94,3 +94,8 @@ export default {
   }
 }
 </script>
+<style>
+  .caps {
+    text-transform: capitalize;
+  }
+</style>
