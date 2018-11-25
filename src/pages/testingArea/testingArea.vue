@@ -1,22 +1,10 @@
 <template>
   <v-container fluid>
     <v-layout>
-      <v-flex xs10 offset-xs1>
+      <v-flex xs12>
         <div>Testing Area</div>
-        <!--<br-text-field
-          label="Text Field"
-          hint="this is a hint"
-          placeholder="this is a placeholder"
-          >
-        </br-text-field>
-        <br-text-area
-          label="Text Area"
-          hint="this is a hint"
-          placeholder="this is a placeholder"
-          >
-        </br-text-area>-->
         <br-form
-          v-bind="fields"
+          :fields="fields"
         >
         </br-form>
       </v-flex>

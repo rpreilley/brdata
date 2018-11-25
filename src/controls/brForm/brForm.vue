@@ -1,32 +1,31 @@
 <template>
   <v-container>
     <v-layout>
-      <form>
-        <v-flex
-          v-for="field in fields"
-          :key="field.key"
-        >
-
-          <br-text-field v-if="brTextTypes.includes(field.type)"
+      <v-flex xs12>
+        <form>
+          <v-flex
+            v-for="field in fields"
             :key="field.key"
-            :label="field.label"
-            :hint="field.hint"
+            :class="getFieldLayout(field)"
           >
-          </br-text-field>
 
-          <br-text-area v-if="brTextTypes.includes(field.type)"
-            :key="field.key"
-            :label="field.label"
-            :hint="field.hint"
-          >
-          </br-text-area>
+            <br-text-field v-if="brTextFieldTypes.includes(field.type)"
+              :key="field.key"
+              :label="field.label"
+              :hint="field.hint"
+            >
+            </br-text-field>
 
-          <div v-else>
-            Field Type is unsupported: {{field.type}}
-          </div>
+            <br-text-area v-if="brTextAreaTypes.includes(field.type)"
+              :key="field.key"
+              :label="field.label"
+              :hint="field.hint"
+            >
+            </br-text-area>
 
-        </v-flex>
-      </form>
+          </v-flex>
+        </form>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -44,8 +43,10 @@ export default {
   props: props,
   data () {
     return {
-      brTextTypes: [
-        Fields.TEXT,
+      brTextFieldTypes: [
+        Fields.TEXT
+      ],
+      brTextAreaTypes: [
         Fields.TEXTAREA
       ]
     }
