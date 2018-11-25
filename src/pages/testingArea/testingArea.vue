@@ -9,6 +9,12 @@
           placeholder="this is a placeholder"
           >
         </br-text-field>
+        <br-text-area
+          label="Text Area"
+          hint="this is a hint"
+          placeholder="this is a placeholder"
+          >
+        </br-text-area>
       </v-flex>
     </v-layout>
   </v-container>
@@ -19,7 +25,8 @@
 export default {
   name: 'testingArea',
   components: {
-    brTextField: () => import('@/controls/brTextField.vue')
+    brTextField: () => import('@/controls/brTextField/brTextField.vue'),
+    brTextArea: () => import('@/controls/brTextArea/brTextArea.vue')
   },
   data () {
     return {
