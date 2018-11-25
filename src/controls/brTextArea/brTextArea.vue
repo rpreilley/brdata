@@ -1,5 +1,5 @@
 <template>
-  <v-flex xs12 sm6 md3>
+  <v-flex>
     <v-textarea
       :label="label"
       :hint="hint"
