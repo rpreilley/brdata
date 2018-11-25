@@ -15,6 +15,23 @@ const fields = [
     hint: 'Text Area',
     type: Fields.TEXTAREA,
     layout: Layout.L12
+  },
+  {
+    key: 'select-list',
+    label: 'Select List',
+    hint: 'Select List',
+    type: Fields.SELECTLIST,
+    layout: Layout.L12,
+    items: [
+      {
+        text: 'Option 1',
+        value: 1
+      },
+      {
+        text: 'Option 2',
+        value: 2
+      }
+    ]
   }
 ]
 

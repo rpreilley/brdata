@@ -1,15 +1,11 @@
 export const props = {
-  fields: {
-    type: Array,
-    default: () => []
-  },
-  data: {
-    type: Object,
-    default: () => {}
-  },
   label: {
     type: String,
     default: ''
+  },
+  items: {
+    type: Array,
+    default: () => []
   },
   hint: {
     type: String,
@@ -19,11 +15,7 @@ export const props = {
     type: String,
     default: ''
   },
-  autofocus: {
-    type: Boolean,
-    default: false
-  },
-  clearable: {
+  multiple: {
     type: Boolean,
     default: false
   },

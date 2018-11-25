@@ -4,6 +4,7 @@
       <v-flex xs12>
         <form>
           <v-flex
+            ref="form"
             v-for="field in fields"
             :key="field.key"
             :class="getFieldLayout(field)"
@@ -13,6 +14,11 @@
               :key="field.key"
               :label="field.label"
               :hint="field.hint"
+              :placeholder="placeholder"
+              :autofocus="autofocus"
+              :clearable="clearable"
+              :disabled="disabled"
+              :required="required"
             >
             </br-text-field>
 
@@ -20,10 +26,27 @@
               :key="field.key"
               :label="field.label"
               :hint="field.hint"
+              :placeholder="placeholder"
+              :autofocus="autofocus"
+              :clearable="clearable"
+              :disabled="disabled"
+              :required="required"
             >
             </br-text-area>
 
+            <br-select-list v-if="brSelectListTypes.includes(field.type)"
+              :key="field.key"
+              :label="field.label"
+              :items="field.items"
+              :hint="field.hint"
+              :placeholder="placeholder"
+              :multiple="field.multiple"
+              :disabled="disabled"
+              :required="required"
+            >
+            </br-select-list>
           </v-flex>
+          <v-btn @click="submit">submit</v-btn>
         </form>
       </v-flex>
     </v-layout>
@@ -38,7 +61,8 @@ export default {
   name: 'brForm',
   components: {
     brTextField: () => import('@/controls/brTextField/brTextField.vue'),
-    brTextArea: () => import('@/controls/brTextArea/brTextArea.vue')
+    brTextArea: () => import('@/controls/brTextArea/brTextArea.vue'),
+    brSelectList: () => import('@/controls/brSelectList/brSelectList.vue')
   },
   props: props,
   data () {
@@ -48,12 +72,15 @@ export default {
       ],
       brTextAreaTypes: [
         Fields.TEXTAREA
+      ],
+      brSelectListTypes: [
+        Fields.SELECTLIST
       ]
     }
   },
   methods: {
-    setFields () {
-
+    submit () {
+      debugger
     },
     getFieldLayout (field) {
       return field.layout
@@ -63,7 +90,7 @@ export default {
 
   },
   created () {
-    this.setFields()
+
   }
 }
 </script>
