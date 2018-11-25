@@ -5,6 +5,7 @@ import Crime from '@/pages/crime/Crime.vue'
 import Movies from '@/pages/movies/Movies.vue'
 import Nasa from '@/pages/nasa/Nasa.vue'
 import HarryPotter from '@/pages/harrypotter/HarryPotter.vue'
+import TestingArea from '@/pages/testingArea/testingArea.vue'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Home
+    },
+    {
+      path: '/testingArea',
+      name: 'TestingArea',
+      component: TestingArea
     }
   ]
 })

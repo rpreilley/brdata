@@ -29,6 +29,8 @@
                     <v-card-media
                       :src="title.Poster"
                       height="200px"
+                      width="200px"
+                      contain
                     >
                       <v-container
                         fill-height
