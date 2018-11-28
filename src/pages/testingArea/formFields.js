@@ -1,7 +1,7 @@
 import {Fields} from '@/aco/types/field.js'
 import {Layout} from '@/aco/types/layout.js'
 
-const fields = [
+const testFields = [
   {
     key: 'text-field',
     label: 'Text Field',
@@ -35,4 +35,4 @@ const fields = [
   }
 ]
 
-export default fields
+export default testFields

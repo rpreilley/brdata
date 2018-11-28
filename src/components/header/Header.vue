@@ -31,6 +31,7 @@
       <v-toolbar-title>Bob Reilley</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat @click="formTesting">Form Testing</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </div>
@@ -41,6 +42,7 @@ import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   name: 'Header',
+  inject: ['brHome_takeAction'],
   data () {
     return {
       drawer: false,
@@ -59,6 +61,9 @@ export default {
   },
   methods: {
     ...mapMutations([ 'changeMainDrawer' ]),
+    formTesting (items) {
+      this.brHome_takeAction(items)
+    },
     menuSubmit (item) {
       this.$router.push(item.path)
     }

@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-layout row wrap>
-      <v-flex>
+      <v-flex xs12>
         <form>
           <v-layout row wrap>
             <v-flex
@@ -17,6 +17,7 @@
                 :key="field.key"
                 :label="field.label"
                 :hint="field.hint"
+                :value="value"
                 :placeholder="placeholder"
                 :autofocus="autofocus"
                 :clearable="clearable"
@@ -31,6 +32,7 @@
                 :key="field.key"
                 :label="field.label"
                 :hint="field.hint"
+                :value="value"
                 :placeholder="placeholder"
                 :autofocus="autofocus"
                 :clearable="clearable"
@@ -44,6 +46,7 @@
                 :id="field.key"
                 :key="field.key"
                 :label="field.label"
+                :value="value"
                 :items="field.items"
                 :hint="field.hint"
                 :placeholder="placeholder"
@@ -56,7 +59,6 @@
               <div v-else>Unsupported field type: {{ field.type }}</div>
             </v-flex>
           </v-layout>
-          <v-btn @click="submit">submit</v-btn>
         </form>
       </v-flex>
     </v-layout>

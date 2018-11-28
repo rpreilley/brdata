@@ -24,6 +24,12 @@ Vue.config.productionTip = false
 
 sync(store, router)
 
+Vue.component('app-header', () => import('@/components/header/Header.vue'))
+Vue.component('app-footer', () => import('@/components/footer/Footer.vue'))
+Vue.component('app-drawer', () => import('@/components/drawer/Drawer.vue'))
+Vue.component('br-form', () => import('@/controls/brForm/brForm.vue'))
+Vue.component('br-dialog', () => import('@/controls/brDialog/brDialog.vue'))
+
 /* eslint-disable no-new */
 const app = new Vue({
   el: '#app',

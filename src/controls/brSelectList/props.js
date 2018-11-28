@@ -26,5 +26,8 @@ export const props = {
   required: {
     type: Boolean,
     default: false
+  },
+  value: {
+    type: null
   }
 }

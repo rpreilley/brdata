@@ -1,8 +1,12 @@
 <template>
   <v-flex>
     <v-text-field
+      ref="textField"
       :label="label"
       :hint="hint"
+      :value="value"
+      @input="value => $emit('input', value)"
+      @change="value => $emit('input', value)"
       :placeholder="placeholder"
       :autofocus="autofocus"
       :clearable="clearable"

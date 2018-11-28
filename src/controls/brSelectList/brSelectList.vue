@@ -1,9 +1,11 @@
 <template>
   <v-flex>
     <v-select
+      ref="selectList"
       v-model="e6"
       :menu-props="{ maxHeight: '400' }"
       :label="label"
+      :value="value"
       :items="items"
       :multiple="multiple"
       :hint="hint"
