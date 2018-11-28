@@ -14,14 +14,14 @@ const fields = [
     label: 'Text Area',
     hint: 'Text Area',
     type: Fields.TEXTAREA,
-    layout: Layout.L12
+    layout: Layout.L6
   },
   {
     key: 'select-list',
     label: 'Select List',
     hint: 'Select List',
     type: Fields.SELECTLIST,
-    layout: Layout.L12,
+    layout: Layout.L6,
     items: [
       {
         text: 'Option 1',

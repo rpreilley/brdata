@@ -1,51 +1,61 @@
 <template>
   <v-container>
-    <v-layout>
-      <v-flex xs12>
+    <v-layout row wrap>
+      <v-flex>
         <form>
-          <v-flex
-            ref="form"
-            v-for="field in fields"
-            :key="field.key"
-            :class="getFieldLayout(field)"
-          >
-
-            <br-text-field v-if="brTextFieldTypes.includes(field.type)"
+          <v-layout row wrap>
+            <v-flex
+              ref="form"
+              v-for="field in fields"
               :key="field.key"
-              :label="field.label"
-              :hint="field.hint"
-              :placeholder="placeholder"
-              :autofocus="autofocus"
-              :clearable="clearable"
-              :disabled="disabled"
-              :required="required"
+              :class="getFieldLayout(field)"
             >
-            </br-text-field>
 
-            <br-text-area v-if="brTextAreaTypes.includes(field.type)"
-              :key="field.key"
-              :label="field.label"
-              :hint="field.hint"
-              :placeholder="placeholder"
-              :autofocus="autofocus"
-              :clearable="clearable"
-              :disabled="disabled"
-              :required="required"
-            >
-            </br-text-area>
+              <br-text-field v-if="brTextFieldTypes.includes(field.type)"
+                :ref="field.key"
+                :id="field.key"
+                :key="field.key"
+                :label="field.label"
+                :hint="field.hint"
+                :placeholder="placeholder"
+                :autofocus="autofocus"
+                :clearable="clearable"
+                :disabled="disabled"
+                :required="required"
+              >
+              </br-text-field>
 
-            <br-select-list v-if="brSelectListTypes.includes(field.type)"
-              :key="field.key"
-              :label="field.label"
-              :items="field.items"
-              :hint="field.hint"
-              :placeholder="placeholder"
-              :multiple="field.multiple"
-              :disabled="disabled"
-              :required="required"
-            >
-            </br-select-list>
-          </v-flex>
+              <br-text-area v-else-if="brTextAreaTypes.includes(field.type)"
+                :ref="field.key"
+                :id="field.key"
+                :key="field.key"
+                :label="field.label"
+                :hint="field.hint"
+                :placeholder="placeholder"
+                :autofocus="autofocus"
+                :clearable="clearable"
+                :disabled="disabled"
+                :required="required"
+              >
+              </br-text-area>
+
+              <br-select-list v-else-if="brSelectListTypes.includes(field.type)"
+                :ref="field.key"
+                :id="field.key"
+                :key="field.key"
+                :label="field.label"
+                :items="field.items"
+                :hint="field.hint"
+                :placeholder="placeholder"
+                :multiple="field.multiple"
+                :disabled="disabled"
+                :required="required"
+              >
+              </br-select-list>
+
+              <div v-else>Unsupported field type: {{ field.type }}</div>
+            </v-flex>
+          </v-layout>
           <v-btn @click="submit">submit</v-btn>
         </form>
       </v-flex>
