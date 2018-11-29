@@ -60,9 +60,6 @@ export default {
     }
   },
   methods: {
-    getFieldLayout (field) {
-      return field.layout
-    },
     async click (button) {
       debugger
       const response = await button.callback(button.data)
