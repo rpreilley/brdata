@@ -91,9 +91,6 @@ export default {
     }
   },
   methods: {
-    submit () {
-      debugger
-    },
     getFieldLayout (field) {
       return field.layout
     }
