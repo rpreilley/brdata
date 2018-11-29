@@ -33,10 +33,10 @@
     <v-layout row v-show="date">
       <v-flex xs10 offset-xs1>
         <v-card>
-          <v-card-media
+          <v-img
             :src="this.image"
-            height="200px"
-          ></v-card-media>
+            height="300px"
+          ></v-img>
 
           <v-card-title primary-title>
             <div>
