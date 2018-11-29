@@ -46,7 +46,8 @@ export default {
     AppFooter: () => import('@/components/footer/Footer.vue'),
     AppDrawer: () => import('@/components/drawer/Drawer.vue'),
     BrForm: () => import('@/controls/brForm/brForm.vue'),
-    BrDialog: () => import('@/controls/brDialog/brDialog.vue')
+    BrDialog: () => import('@/controls/brDialog/brDialog.vue'),
+    BrDataTable: () => import('@/controls/brDataTable/brDataTable.vue')
   },
   provide () {
     return {
@@ -84,14 +85,13 @@ export default {
   methods: {
     takeAction () {
       debugger
+      // Set form fields and data from props
       this.$set(this.testingForm.form.props, 'fields', testFields)
       this.$set(this.testingForm.form.props, 'data', {})
       this.testingForm.dialog.props.show = true
     },
     async testingFormSave (data) {
-      debugger
       let success = false
-      debugger
       return { close: success }
     },
     async testingFormClose (data) {

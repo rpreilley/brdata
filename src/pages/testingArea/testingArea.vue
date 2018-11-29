@@ -3,10 +3,10 @@
     <v-layout>
       <v-flex xs12>
         <div>Testing Area</div>
-        <br-form
-          :fields="fields"
+        <br-data-table
+          v-bind="brDataTableProps"
         >
-        </br-form>
+        </br-data-table>
       </v-flex>
     </v-layout>
   </v-container>
@@ -14,17 +14,20 @@
 
 <script>
 import formFields from './formFields.js'
+import dataTableProps from './dataTableProps.js'
 
 export default {
   name: 'testingArea',
   components: {
     brTextField: () => import('@/controls/brTextField/brTextField.vue'),
     brTextArea: () => import('@/controls/brTextArea/brTextArea.vue'),
-    brForm: () => import('@/controls/brForm/brForm.vue')
+    brForm: () => import('@/controls/brForm/brForm.vue'),
+    brDataTable: () => import('@/controls/brDataTable/brDataTable.vue')
   },
   data () {
     return {
-      fields: formFields
+      fields: formFields,
+      brDataTableProps: dataTableProps
     }
   },
   methods: {

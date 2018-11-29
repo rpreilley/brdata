@@ -35,7 +35,6 @@
 </template>
 
 <script>
-import {Fields} from '@/aco/types/field.js'
 import { props } from './props.js'
 
 export default {
@@ -48,22 +47,12 @@ export default {
   props: props,
   data () {
     return {
-      brTextFieldTypes: [
-        Fields.TEXT
-      ],
-      brTextAreaTypes: [
-        Fields.TEXTAREA
-      ],
-      brSelectListTypes: [
-        Fields.SELECTLIST
-      ]
+
     }
   },
   methods: {
     async click (button) {
-      debugger
       const response = await button.callback(button.data)
-      debugger
       if (response.close) {
         this.closeDialog()
       }
