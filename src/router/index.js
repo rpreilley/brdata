@@ -9,7 +9,7 @@ import TestingArea from '@/pages/testingArea/testingArea.vue'
 
 Vue.use(Router)
 
-export default new Router({
+let brRouter = new Router({
   mode: 'hash',
   routes: [
     {
@@ -33,11 +33,6 @@ export default new Router({
       component: Movies
     },
     {
-      path: '/harrypotter',
-      name: 'Harry Potter',
-      component: HarryPotter
-    },
-    {
       path: '/dashboard',
       name: 'Dashboard',
       component: Home
@@ -49,3 +44,16 @@ export default new Router({
     }
   ]
 })
+
+export function registerRoutes (routes) {
+  brRouter.addRoutes(routes)
+}
+
+export default brRouter
+
+// Load every route file within the pages directory and require it
+function importRoutes (r) {
+  r.keys().forEach(r)
+}
+
+importRoutes(require.context('@/pages/', true, /route.js$/))
