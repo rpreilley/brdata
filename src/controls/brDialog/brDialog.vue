@@ -53,6 +53,7 @@ export default {
   methods: {
     async click (button) {
       const response = await button.callback(button.data)
+      debugger
       if (response.close) {
         this.closeDialog()
       }

@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import ApiService from '@/services/ApiService.js'
 import testFields from '@/pages/testingArea/formFields.js'
 
 export default {
@@ -54,7 +55,7 @@ export default {
       brHome_takeAction: this.takeAction
     }
   },
-  data: () => {
+  data () {
     return {
       testingForm: {
         form: {
@@ -68,8 +69,7 @@ export default {
             show: false,
             title: 'This is my form within a dialog',
             showCloseButton: true,
-            buttonCallback: this.testingFormSave,
-            // closeButtonLabel: 'cancel',
+            closeButtonLabel: 'cancel',
             buttons: [
               {
                 label: 'Save',
@@ -84,7 +84,6 @@ export default {
   },
   methods: {
     takeAction () {
-      debugger
       // Set form fields and data from props
       this.$set(this.testingForm.form.props, 'fields', testFields)
       this.$set(this.testingForm.form.props, 'data', {})
@@ -92,6 +91,19 @@ export default {
     },
     async testingFormSave (data) {
       let success = false
+      let url = 'https://randomuser.me/api/'
+
+      try {
+        const response = await ApiService.get(url)
+
+        if (response) {
+          success = true
+        }
+      } catch (e) {
+        console.log(e)
+        success = false
+      }
+
       return { close: success }
     },
     async testingFormClose (data) {
