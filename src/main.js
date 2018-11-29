@@ -29,6 +29,7 @@ Vue.component('app-footer', () => import('@/components/footer/Footer.vue'))
 Vue.component('app-drawer', () => import('@/components/drawer/Drawer.vue'))
 Vue.component('br-form', () => import('@/controls/brForm/brForm.vue'))
 Vue.component('br-dialog', () => import('@/controls/brDialog/brDialog.vue'))
+Vue.component('br-data-table', () => import('@/controls/brDataTable/brDataTable.vue'))
 
 /* eslint-disable no-new */
 const app = new Vue({

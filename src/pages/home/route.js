@@ -2,7 +2,7 @@ import * as router from '@/router'
 // import props from './props.js'
 
 const routes = [{
-  path: '/home',
+  path: '/',
   name: 'Home',
   component: () => import('./Home.vue'),
   meta: {

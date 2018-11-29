@@ -43,12 +43,7 @@ import testFields from '@/pages/testingArea/formFields.js'
 export default {
   name: 'App',
   components: {
-    AppHeader: () => import('@/components/header/Header.vue'),
-    AppFooter: () => import('@/components/footer/Footer.vue'),
-    AppDrawer: () => import('@/components/drawer/Drawer.vue'),
-    BrForm: () => import('@/controls/brForm/brForm.vue'),
-    BrDialog: () => import('@/controls/brDialog/brDialog.vue'),
-    BrDataTable: () => import('@/controls/brDataTable/brDataTable.vue')
+
   },
   provide () {
     return {
