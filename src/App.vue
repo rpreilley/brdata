@@ -7,6 +7,13 @@
     <!-- TOOLBAR COMPONENT -->
     <app-header></app-header>
 
+    <!-- ROUTER VIEW COMPONENT -->
+    <v-content>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+
     <!-- TESTING FORM DIALOG -->
     <br-dialog
       v-bind="testingForm.dialog.props"
@@ -22,13 +29,6 @@
         </br-form>
       </div>
     </br-dialog>
-
-    <!-- ROUTER VIEW COMPONENT -->
-    <v-content>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
-    </v-content>
 
     <!-- FOOTER COMPONENT -->
     <app-footer></app-footer>
@@ -67,6 +67,7 @@ export default {
             show: false,
             title: 'This is my form within a dialog',
             showCloseButton: true,
+            buttonCallback: this.testingFormSave,
             // closeButtonLabel: 'cancel',
             buttons: [
               {
@@ -82,6 +83,7 @@ export default {
   },
   methods: {
     takeAction () {
+      debugger
       this.$set(this.testingForm.form.props, 'fields', testFields)
       this.$set(this.testingForm.form.props, 'data', {})
       this.testingForm.dialog.props.show = true
