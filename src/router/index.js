@@ -12,36 +12,7 @@ Vue.use(Router)
 let brRouter = new Router({
   mode: 'hash',
   routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
-      path: '/nasa',
-      name: 'Nasa',
-      component: Nasa
-    },
-    {
-      path: '/crime',
-      name: 'Crime',
-      component: Crime
-    },
-    {
-      path: '/movies',
-      name: 'Movies',
-      component: Movies
-    },
-    {
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: Home
-    },
-    {
-      path: '/testingArea',
-      name: 'TestingArea',
-      component: TestingArea
-    }
+    // Can put routes here or use method below to maintain a route.js file with a page
   ]
 })
 

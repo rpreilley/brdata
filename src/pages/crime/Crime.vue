@@ -111,7 +111,7 @@ import methods from './methods.js'
 import computed from './computed.js'
 
 export default {
-  name: 'Home',
+  name: 'Crime',
   data () {
     return {
       pagination: {
