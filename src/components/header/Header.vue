@@ -28,7 +28,7 @@
     </v-navigation-drawer>
       <v-toolbar dense fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Bob Reilley</v-toolbar-title>
+      <v-toolbar-title>Vue App</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat @click="formTesting">Form Testing</v-btn>
@@ -51,7 +51,6 @@ export default {
         { title: 'Crime Watch', icon: 'gavel', path: '/crime' },
         { title: 'NASA Pod', icon: 'star', path: '/nasa' },
         { title: 'Movie Posters', icon: 'movie', path: '/movies' },
-        { title: 'Harry Potter', icon: 'show_chart', path: '/harrypotter' },
         { title: 'Dashboard', icon: 'dashboard', path: '/dashboard' }
       ],
       mini: true,

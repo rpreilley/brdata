@@ -48,6 +48,12 @@
 
     <v-layout>
       <v-flex xs10 offset-xs1>
+        <v-divider class="my-3"></v-divider>
+      </v-flex>
+    </v-layout>
+
+    <!--<v-layout>
+      <v-flex xs10 offset-xs1>
         <v-data-table
           v-show="showTable"
           v-model="selected"
@@ -102,7 +108,7 @@
           </template>
         </v-data-table>
       </v-flex>
-    </v-layout>
+    </v-layout> -->
   </v-container>
 </template>
 
@@ -137,11 +143,7 @@ export default {
       selection: '',
       selected: [],
       headers: [
-        {
-          text: 'File Number',
-          align: 'left',
-          value: 'file_number'
-        },
+        { text: 'File Number', value: 'file_number' },
         { text: 'Offense Date', value: 'offense_date' },
         { text: 'Offense Time', value: 'offense_time' },
         { text: 'Crime', value: 'crime' },

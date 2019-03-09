@@ -2,8 +2,8 @@
   <v-container fluid>
     <v-layout>
       <v-flex xs10 offset-xs1>
-        <h3 class="display-3">Welcome to my portfolio.</h3>
-        <span class="subheading">Hello! My name is Bob Reilley, and I am a software developer who loves to build beautiful web sites and intuitive web applications that will make peoples everyday lives easier. I built this portfolio using the <a href='https://vuejs.org/' target='_blank'>Vue.js</a> framework and utilized the <a href='https://vuetifyjs.com/en/' target='_blank'>Vuetify</a> Material Design Component kit. I have included a few projects small Vue projects that you can check out  by clicking the menu icon at the top left corner of the page.</span>
+        <h3 class="display-3">Welcome</h3>
+        <span class="subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed elementum purus. Aenean id imperdiet erat. Quisque ac malesuada risus, non rutrum orci. Donec sed metus hendrerit, scelerisque lectus nec, tempus odio. Integer sed erat leo. Donec molestie, lectus quis tincidunt posuere, ligula quam ornare felis, aliquam tempus odio ante at sem. Sed accumsan lobortis diam, non placerat eros ornare ac. Nunc sem sem, sollicitudin sed sem vitae, cursus imperdiet nisl. Integer laoreet consequat nibh, vitae bibendum ante dictum pulvinar.</span>
         <v-divider class="my-3"></v-divider>
         <div class="title mb-3">Thank you for visiting.</div>
       </v-flex>

@@ -9,6 +9,7 @@
               v-for="field in fields"
               :key="field.key"
               :class="getFieldLayout(field)"
+              class="br-form-inputs"
             >
 
               <br-text-field v-if="brTextFieldTypes.includes(field.type)"
@@ -94,16 +95,12 @@ export default {
     getFieldLayout (field) {
       return field.layout
     }
-  },
-  computed: {
-
-  },
-  created () {
-
   }
 }
 </script>
 
 <style>
-
+  .br-form-inputs {
+    padding: 0 .5rem;
+  }
 </style>

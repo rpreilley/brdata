@@ -1,8 +1,8 @@
 <template>
   <v-app id="app" dark>
 
-    <!-- NAV DRAWER COMPONENT-->
-    <app-drawer></app-drawer>
+    <!-- NAV DRAWER COMPONENT
+    <app-drawer></app-drawer>-->
 
     <!-- TOOLBAR COMPONENT -->
     <app-header></app-header>
@@ -21,6 +21,7 @@
       @close="testingForm.dialog.props.show = false"
     >
       <div slot="content">
+
         <br-form
           ref="brForm_testingForm"
           :fields="testingForm.form.props.fields"
@@ -95,7 +96,6 @@ export default {
           success = true
         }
       } catch (e) {
-        console.log(e)
         success = false
       }
 
@@ -104,12 +104,6 @@ export default {
     async testingFormClose (data) {
       return { close: false }
     }
-  },
-  created () {
-
-  },
-  computed: {
-
   }
 }
 </script>
