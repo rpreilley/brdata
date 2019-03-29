@@ -32,6 +32,10 @@ export default {
   },
   computed: {
 
+  },
+  mounted () {
+    console.log("mounted")
+    debugger
   }
 }
 </script>
